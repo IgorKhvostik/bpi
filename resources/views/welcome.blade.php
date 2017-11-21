@@ -124,23 +124,19 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($rates as $rate)
                         <tr>
-                            <td>322.1</td>
-                            <td>322.1</td>
-                            <td>322.1</td>
-                            <td>322.1</td>
+                            <td>{{$rate->created_at}}</td>
+                            <td>{{$rate->usd}}</td>
+                            <td>{{$rate->gbp}}</td>
+                            <td>{{$rate->eur}}</td>
                         </tr>
-                        <tr>
-
-                        </tr>
-                        <tr>
-
-                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </main>
-
+{{$rates->links()}}
     </body>
 </html>

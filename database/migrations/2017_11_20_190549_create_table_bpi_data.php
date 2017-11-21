@@ -15,9 +15,9 @@ class CreateTableBpiData extends Migration
     {
         Schema::create('bpi_data', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('USD');
-            $table->integer('GBP');
-            $table->integer('EUR');
+            $table->float('usd', 7, 2)->default(0);
+            $table->float('gbp', 7, 2)->default(0);
+            $table->float('eur', 7, 2)->default(0);
             $table->timestamps();
         });
     }
