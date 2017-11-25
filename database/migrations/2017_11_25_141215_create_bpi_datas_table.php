@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableBpiData extends Migration
+class CreateBpiDatasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTableBpiData extends Migration
      */
     public function up()
     {
-        Schema::create('bpi_data', function (Blueprint $table) {
+        Schema::create('bpi_datas', function (Blueprint $table) {
             $table->increments('id');
             $table->float('usd', 7, 2)->default(0);
             $table->float('gbp', 7, 2)->default(0);
@@ -29,6 +29,6 @@ class CreateTableBpiData extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bpi_data');
+        Schema::dropIfExists('bpi_datas');
     }
 }
