@@ -59,6 +59,7 @@ class BpiGet extends Command
             $end = microtime(true);
             $time = $end - $start;
             Log::info('Date: ' . Carbon::now() . ' | Provider: ' . env('APP_PROVIDER') . ' | Command: ' . 'bpi:get' . ' | Time to execute command (sec) : ' . $time);
+
         } elseif (env('APP_PROVIDER') == 'blockchain') {
             $start = microtime(true);
             if (env('APP_PROVIDER') == 'blockchain') {
@@ -80,7 +81,7 @@ class BpiGet extends Command
                 $time = $end - $start;
                 Log::info('Date: ' . Carbon::now() . ' | Provider: ' . env('APP_PROVIDER') . ' | Command: ' . 'bpi:get' . ' | Time to execute command (sec) : ' . $time);
             }
-        }else {
+        } else {
             die('Error! Wrong provider name at line "APP_PROVIDER" of .env file');
         }
 
